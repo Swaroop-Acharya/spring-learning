@@ -1,4 +1,4 @@
-# spring-learning
+# Spring Boot
 
 # what is spring boot - Its a module of spring which speedsup the developement of the application
 -  spring framework + Embeded servers - [Configuration] = spring boot
