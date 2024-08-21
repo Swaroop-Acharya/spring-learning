@@ -16,7 +16,7 @@
 # Service class
 In a Spring Boot application, a service class is used to encapsulate the business logic of the application. It sits between the controller and the repository layers. Here's what a service class typically does:
 
-Business Logic: Contains the business logic that might be too complex to include directly in the controller. This keeps the controller focused on handling HTTP requests and responses.
-Transaction Management: The service layer is often where transactions are managed. You can use annotations like @Transactional to define the scope of a single transaction.
-Interaction with Repositories: The service class interacts with the repository classes to retrieve, save, update, or delete data in the database.
-Decoupling: By using a service layer, you can change the business logic without affecting the controllers. This decoupling makes your application more modular and easier to maintain.
+- Business Logic: Contains the business logic that might be too complex to include directly in the controller. This keeps the controller focused on handling HTTP requests and responses.
+- Transaction Management: The service layer is often where transactions are managed. You can use annotations like @Transactional to define the scope of a single transaction.
+- Interaction with Repositories: The service class interacts with the repository classes to retrieve, save, update, or delete data in the database.
+- Decoupling: By using a service layer, you can change the business logic without affecting the controllers. This decoupling makes your application more modular and easier to maintain.
