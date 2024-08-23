@@ -3428,3 +3428,23 @@ Unconditional classes:
 2024-08-20T12:53:05.326+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
 2024-08-20T12:53:05.328+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-9] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
 2024-08-20T12:53:05.330+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-08-20T12:53:06.604+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/form", parameters={}
+2024-08-20T12:53:06.605+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.curd.UserController#showForm()
+2024-08-20T12:53:06.605+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-10] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-08-20T12:53:06.606+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-08-20T12:53:06.609+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-10] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-08-20T12:53:06.609+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-20T12:53:08.427+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/list", parameters={}
+2024-08-20T12:53:08.428+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.curd.UserController#listUsers(Model)
+2024-08-20T12:53:08.428+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-1] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-08-20T12:53:08.429+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(717839329<open>)] for JPA transaction
+2024-08-20T12:53:08.430+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+2024-08-20T12:53:08.431+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-1] o.s.jdbc.datasource.DataSourceUtils      : Setting JDBC Connection [HikariProxyConnection@1512506184 wrapping com.mysql.cj.jdbc.ConnectionImpl@121f24b0] read-only
+2024-08-20T12:53:08.432+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@e918589]
+2024-08-20T12:53:08.435+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction commit
+2024-08-20T12:53:08.436+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Committing JPA transaction on EntityManager [SessionImpl(717839329<open>)]
+2024-08-20T12:53:08.436+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-1] o.s.jdbc.datasource.DataSourceUtils      : Resetting read-only flag of JDBC Connection [HikariProxyConnection@1512506184 wrapping com.mysql.cj.jdbc.ConnectionImpl@121f24b0]
+2024-08-20T12:53:08.437+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Not closing pre-bound JPA EntityManager after transaction
+2024-08-20T12:53:08.438+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-08-20T12:53:08.444+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-1] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-08-20T12:53:08.447+05:30 DEBUG 7244 --- [curd] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
