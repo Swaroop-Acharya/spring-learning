@@ -1,21 +1,25 @@
-package com.example.curd;
+package com.example.curd.controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.curd.entity.User;
+import com.example.curd.repository.UserRepository;
 
 @Controller
-public class UserController {
-
+public class WebUserController {
     @Autowired
     private UserRepository userRepository;
 
-    //INSERT THE DATA INTO THE TABLE using view
-    
+    // INSERT THE DATA INTO THE TABLE using view
     @PostMapping("/submitUser")
     public String submitUser(@RequestParam("name") String name, @RequestParam("email") String email, Model model) {
         User user = new User(name, email);
@@ -30,21 +34,6 @@ public class UserController {
         return "form"; // Return the name of the view containing the form
     }
 
-    //INSERT THE DATA INTO THE TABLE using JSON
-    @PostMapping("/addUser")
-    public String addUser(@RequestBody User user) {     
-        userRepository.save(user);
-        return "User added";
-    }
-
-    //Retreive the data from the table to the view
-
-    @GetMapping("/usersApi")
-    public List<User> getUseStringApi() {
-        return userRepository.findAll();
-    }
-
-    //Retreive the data from the table to the view(Thymeleaf)
     @GetMapping("/list")
     public String listUsers(Model model) {
         List<User> users = userRepository.findAll();
@@ -57,5 +46,5 @@ public class UserController {
         userRepository.deleteById(id);
         return "redirect:/list"; // Redirect to the list page after deletion
     }
-    
+
 }
