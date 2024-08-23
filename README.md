@@ -13,6 +13,8 @@
 - automatically configure spring and 3rd party libraries
 - no code generation and no requirement for XML configuration
 
+# CURD operation
+
 # Service class
 In a Spring Boot application, a service class is used to encapsulate the business logic of the application. It sits between the controller and the repository layers. Here's what a service class typically does:
 
@@ -20,3 +22,6 @@ In a Spring Boot application, a service class is used to encapsulate the busines
 - Transaction Management: The service layer is often where transactions are managed. You can use annotations like @Transactional to define the scope of a single transaction.
 - Interaction with Repositories: The service class interacts with the repository classes to retrieve, save, update, or delete data in the database.
 - Decoupling: By using a service layer, you can change the business logic without affecting the controllers. This decoupling makes your application more modular and easier to maintain.
+
+# Response Entity Class
+- ResponseEntity is a powerful class in Spring that allows you to build and customize HTTP responses. It provides control over the HTTP status code, headers, and the body of the response, making it very useful for creating RESTful APIs.
