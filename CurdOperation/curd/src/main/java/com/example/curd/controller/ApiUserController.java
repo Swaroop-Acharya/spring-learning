@@ -1,9 +1,7 @@
 package com.example.curd.controller;
 
 import java.util.List;
-
 import jakarta.validation.*;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
