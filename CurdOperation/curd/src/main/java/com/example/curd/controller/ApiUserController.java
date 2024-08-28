@@ -41,7 +41,7 @@ public class ApiUserController {
 
     // Update the user
     @PutMapping("/update/{id}")
-    public ResponseEntity<ApiResponse> updateUse(@PathVariable Long id, @RequestBody User updatedUserDetails) {
+    public ResponseEntity<ApiResponse> updateUse(@PathVariable Long id, @Valid @RequestBody User updatedUserDetails) {
         try {
             User resultUser = userService.updateUser(id, updatedUserDetails);
             ApiResponse response = new ApiResponse("success", "User updated sucessfully", resultUser);
