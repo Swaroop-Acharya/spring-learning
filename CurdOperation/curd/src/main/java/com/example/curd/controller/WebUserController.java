@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.curd.dao.UserRepository;
 import com.example.curd.entity.User;
-import com.example.curd.repository.UserRepository;
 
 @Controller
 public class WebUserController {
