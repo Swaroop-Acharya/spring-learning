@@ -23,5 +23,12 @@ In a Spring Boot application, a service class is used to encapsulate the busines
 - Interaction with Repositories: The service class interacts with the repository classes to retrieve, save, update, or delete data in the database.
 - Decoupling: By using a service layer, you can change the business logic without affecting the controllers. This decoupling makes your application more modular and easier to maintain.
 
+# DTO(Data Transfer Object) class
+A DTO (Data Transfer Object) is a design pattern used to transfer data between different layers of an application or between different systems. DTOs are especially useful for managing the data that travels over the network, such as when interacting with a database, an API, or different parts of an application.
+- Separation of Concerns: By separating the internal model from the data transfer format, you can modify the internal data structures without affecting external interfaces.
+- Validation and Transformation: DTOs allow you to validate and transform data before processing or persisting it.
+- Data Shaping: You can include only the necessary fields in a DTO, making API responses leaner and more efficient.
+- Security: By using DTOs, you can avoid exposing sensitive data that is part of your internal models.
+
 # Response Entity Class
 - ResponseEntity is a powerful class in Spring that allows you to build and customize HTTP responses. It provides control over the HTTP status code, headers, and the body of the response, making it very useful for creating RESTful APIs.
