@@ -56,13 +56,14 @@ public class ApiUserController {
     // Delete the User
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable Long id) {
-        User resultUser = userService.deleteUser(id);
-        if (resultUser != null) {
-            return ResponseEntity.status(HttpStatus.OK)
-                    .body(new ApiResponse("success", "User deleted sucessfully", resultUser));
+        try {
+            User deletedUser = userService.deleteUser(id);
+            ApiResponse response = new ApiResponse("success", "User deleted successfully", deletedUser);
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } catch (Exception e) {
+            ApiResponse response = new ApiResponse("error", e.getMessage(), null);
+            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body(new ApiResponse("success", "User not found with the ID: " + id, resultUser));
     }
 
 }

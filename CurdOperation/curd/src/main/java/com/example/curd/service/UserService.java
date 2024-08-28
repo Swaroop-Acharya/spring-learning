@@ -44,7 +44,6 @@ public class UserService {
             return userRepository.save(user);
         }).orElseThrow(() -> new IllegalArgumentException("User not found with ID: " + id));
     }
-    
 
     // // resultUser.ifPresent(user -> {
     // // user.setName(updatedUserDetails.getName());
@@ -57,13 +56,17 @@ public class UserService {
     // }
 
     // Delete Logic
+    // Optional<User> resultUser = getUserById(id);
+    // if (resultUser.isPresent()) {
+    // userRepository.deleteById(id);
+    // return resultUser.get();
+    // }
+    // return null;
     public User deleteUser(Long id) {
-        Optional<User> resultUser = getUserById(id);
-        if (resultUser.isPresent()) {
+        return getUserById(id).map(user -> {
             userRepository.deleteById(id);
-            return resultUser.get();
-        }
-        return null;
+            return user;
+        }).orElseThrow(() -> new IllegalArgumentException("User does'nt exit with the ID: " + id));
 
     }
 }
