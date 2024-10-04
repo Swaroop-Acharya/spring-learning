@@ -1,6 +1,5 @@
 # Spring Boot
-
-# what is spring boot - Its a module of spring which speedsup the developement of the application
+what is spring boot - Its a module of spring which speedsup the developement of the application
 -  spring framework + Embeded servers - [Configuration] = spring boot
 - convention over configuration software design style
 - It Decreases the efforts of developers
