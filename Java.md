@@ -52,7 +52,7 @@ Returns a sequential Stream containing the value if present, otherwise an empty 
 - Optional<T> or(Supplier<? extends Optional<? extends T>> supplier) (Java 9+)
 Returns the current Optional if a value is present, otherwise returns an Optional produced by the supplier.
 
-#Stream API:- 
+# Stream API:- 
 The Streams API is used to process collections of objects in a functional programming style. It provides operations like filter(), map(), reduce(), collect(), and more to manipulate data in a pipeline.
 - filter(): Select elements that match a condition.
 - map(): Transform each element.
