@@ -1,7 +1,6 @@
 # Optional Class 
 - The Optional class is commonly used in projects to handle situations where a value might be absent, making the code more robust and avoiding the pitfalls of null references.
-
-# Methods 
+Methods 
 - static <T> Optional<T> of(T value)
 Creates an Optional with the specified non-null value.
 
@@ -52,3 +51,16 @@ Returns a sequential Stream containing the value if present, otherwise an empty 
 
 - Optional<T> or(Supplier<? extends Optional<? extends T>> supplier) (Java 9+)
 Returns the current Optional if a value is present, otherwise returns an Optional produced by the supplier.
+
+# Stream API:- 
+The Streams API is used to process collections of objects in a functional programming style. It provides operations like filter(), map(), reduce(), collect(), and more to manipulate data in a pipeline.
+- filter(): Select elements that match a condition.
+- map(): Transform each element.
+- sorted(): Sort elements.
+- forEach(): Perform an action for each element.
+- collect(): Gather elements into a collection.
+- reduce(): Aggregate elements into a single result.
+- distinct(): Remove duplicates.
+- limit(): Take the first n elements.
+- skip(): Skip the first n elements.
+- anyMatch() / allMatch() / noneMatch(): Check if elements match a condition.
