@@ -62,10 +62,6 @@ The `pom.xml` file (Project Object Model) contains project information and confi
 
 ## JAR Files
 
-A Spring Boot application typically produces a fat JAR file in the `target` folder, which contains all necessary dependencies to run the application, including an embedded Tomcat server. The `.jar.original` file contains only the original source code.
-
- 
-
 
 ### Inversion of Control (IoC) Container
 
@@ -121,3 +117,80 @@ The `@Bean` annotation is applied to methods within a `@Configuration` class. It
 
 ---
 
+# Spring Boot REST API Example
+
+This project is a basic example of a REST API in Spring Boot, covering concepts like REST verbs, controllers, `@RestController`, and entity classes.
+
+---
+
+## REST API Overview
+
+A **REST API** (Representational State Transfer) is an architectural style that allows communication between a client and a server through standard HTTP requests. REST APIs are typically organized around **URLs** and **HTTP verbs** (also known as REST verbs).
+
+### REST Verbs
+
+The key REST verbs used in REST APIs are:
+- **GET**: Retrieve data from the server.
+- **POST**: Create new data on the server.
+- **PUT**: Update existing data on the server.
+- **DELETE**: Remove data from the server.
+
+---
+
+## Key Components in a Spring Boot REST API
+
+### Controller
+
+A **Controller** in Spring is a special component that handles HTTP requests from clients. Controllers map client requests to specific methods and define the response behavior.
+
+### `@RestController`
+
+The `@RestController` annotation is a specialized version of `@Controller` in Spring. It is used specifically for RESTful web services and automatically serializes responses to JSON format, allowing easy communication with web clients.
+
+### Entity Class
+
+An **Entity Class** is a Plain Old Java Object (POJO) that represents data to be stored and retrieved, typically from a database. In Spring, entity classes are often annotated with `@Entity` and mapped to database tables, but they can also simply be used as data transfer objects (DTOs) for carrying data between layers in the application.
+
+---
+
+## Example Code
+
+### Controller Example
+
+Below is an example of a simple controller that handles requests for a `User` entity:
+
+```java
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/users")
+public class UserController {
+
+    // GET: Retrieve all users
+    @GetMapping
+    public List<User> getAllUsers() {
+        // Return list of users (dummy data for this example)
+        return List.of(new User(1, "John Doe"), new User(2, "Jane Smith"));
+    }
+
+    // POST: Create a new user
+    @PostMapping
+    public User createUser(@RequestBody User user) {
+        // In a real application, save the user to the database
+        return user;
+    }
+
+    // PUT: Update an existing user
+    @PutMapping("/{id}")
+    public User updateUser(@PathVariable int id, @RequestBody User updatedUser) {
+        // In a real application, update the user in the database
+        return updatedUser;
+    }
+
+    // DELETE: Delete a user by ID
+    @DeleteMapping("/{id}")
+    public String deleteUser(@PathVariable int id) {
+        // In a real application, delete the user from the database
+        return "User with ID " + id + " deleted";
+    }
+}
