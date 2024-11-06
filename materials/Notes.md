@@ -63,3 +63,61 @@ The `pom.xml` file (Project Object Model) contains project information and confi
 ## JAR Files
 
 A Spring Boot application typically produces a fat JAR file in the `target` folder, which contains all necessary dependencies to run the application, including an embedded Tomcat server. The `.jar.original` file contains only the original source code.
+
+ 
+
+
+### Inversion of Control (IoC) Container
+
+In Spring, the **Inversion of Control (IoC) Container** is responsible for managing the lifecycle and configuration of application objects (beans). Instead of creating objects directly, we request instances from the IoC Container, which handles dependencies and configurations automatically.
+
+### Application Context
+
+The **Application Context** is a central interface in the Spring Framework for creating and accessing the IoC Container. It initializes and configures beans, making it a way to set up an IoC Container. When the Application Context is started, it scans the application for classes with specific annotations (such as `@Component`, `@Service`, `@Repository`, etc.), creates instances of these classes, and manages them as beans within the container.
+
+---
+
+## Core Annotations
+
+### `@Component`
+
+The `@Component` annotation is a general-purpose annotation that marks a class as a Spring bean. When a class is annotated with `@Component`, Spring detects it during the component scan process, creates an instance of it, and manages it as a bean in the IoC Container.
+
+In addition to `@Component`, Spring provides specialized stereotypes:
+- **`@Service`**: For service-layer classes.
+- **`@Repository`**: For data access objects (DAOs) and persistence handling.
+- **`@Controller`** and **`@RestController`**: For web controllers in Spring MVC.
+
+### `@SpringBootApplication`
+
+The `@SpringBootApplication` annotation is typically used in the main class of a Spring Boot application. It combines three essential annotations:
+1. **`@Configuration`**: Marks the class as a source of bean definitions.
+2. **`@EnableAutoConfiguration`**: Enables Spring Boot's auto-configuration, which configures the application based on its dependencies (e.g., setting up a DataSource if `spring-boot-starter-data-jpa` is on the classpath).
+3. **`@ComponentScan`**: Scans the package of the annotated class and subpackages for Spring components (like `@Component`, `@Service`, `@Repository`, `@Controller`) and registers them as beans in the Application Context.
+
+### `@ComponentScan`
+
+The `@ComponentScan` annotation tells Spring which packages to scan for `@Component` and other stereotype annotations. It enables Spring to automatically detect and register classes as beans in the IoC Container.
+
+### `@RestController`
+
+The `@RestController` annotation is a specialization of `@Controller`. It is used to define RESTful web services. In addition to registering the class as a Spring bean, `@RestController` combines `@Controller` and `@ResponseBody`, meaning methods in a `@RestController` return data directly as JSON or XML responses.
+
+### `@Autowired`
+
+The `@Autowired` annotation is used for **dependency injection**. It allows Spring to resolve and inject collaborating beans into a given bean. For instance, if a class needs to use another class (e.g., a service needing a repository), `@Autowired` tells Spring to automatically inject the required bean.
+
+### `@EnableAutoConfiguration`
+
+The `@EnableAutoConfiguration` annotation, enabled by default in Spring Boot applications through `@SpringBootApplication`, configures Spring Boot based on the libraries it detects on the classpath. For instance, if it finds MongoDB dependencies, it will automatically configure MongoDB-related beans.
+
+### `@Configuration`
+
+The `@Configuration` annotation marks a class as a source of bean definitions. Classes annotated with `@Configuration` often contain `@Bean`-annotated methods that define the beans to be managed by the IoC Container. By declaring a class as `@Configuration`, you allow Spring to treat it as a configuration class for setting up beans.
+
+### `@Bean`
+
+The `@Bean` annotation is applied to methods within a `@Configuration` class. It tells Spring that the object returned from that method should be registered as a bean in the Application Context. This enables defining beans that require specific configurations or complex construction.
+
+---
+
