@@ -235,5 +235,6 @@ For MongoDB, Spring provides a different persistence provider: **Spring Data Mon
 ### 1. Query Methods (Method DSL)
 Spring Data JPA allows you to create queries based on the method naming conventions. This is a simple and convenient way to build queries by just defining method names. For example:
 
-
+## 2. Criteria API
+Provides more dynamic and programatic approach for building complex and custom queries.
 
