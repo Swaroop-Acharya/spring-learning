@@ -194,8 +194,9 @@ public class UserController {
         return "User with ID " + id + " deleted";
     }
 }
+```
 
-# Understanding ORM, JPA, and Spring Data JPA
+## Understanding ORM, JPA, and Spring Data JPA
 
 ## ORM (Object-Relational Mapping)
 Object-Relational Mapping (ORM) is a technique used to map Java objects to database tables. It allows developers to interact with databases using object-oriented programming concepts, making it easier to manage and manipulate relational data in an object-oriented manner.
