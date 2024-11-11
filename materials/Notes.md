@@ -238,3 +238,15 @@ Spring Data JPA allows you to create queries based on the method naming conventi
 ## 2. Criteria API
 Provides more dynamic and programatic approach for building complex and custom queries.
 
+# Lombok Library, MongoDB Relationships, and Indexing in Spring Boot
+
+## Lombok Library
+
+Lombok is a Java library that helps reduce boilerplate code by automatically generating getters, setters, constructors, `toString()`, `equals()`, `hashCode()`, and other methods during compilation. This allows developers to focus more on the logic of their applications instead of writing repetitive code.
+
+### Key Annotations:
+- `@Getter` and `@Setter`: Automatically generates getter and setter methods for all fields.
+- `@ToString`: Generates a `toString()` method that includes all fields.
+- `@EqualsAndHashCode`: Generates `equals()` and `hashCode()` methods based on the fields.
+- `@NoArgsConstructor`, `@AllArgsConstructor`, and `@RequiredArgsConstructor`: Generate constructors with various argument configurations.
+- `@Data`: A shorthand for generating `@Getter`, `@Setter`, `@ToString`, `@EqualsAndHashCode`, and `@RequiredArgsConstructor` in one annotation.
