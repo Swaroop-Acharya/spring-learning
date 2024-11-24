@@ -251,3 +251,19 @@ Lombok is a Java library that helps reduce boilerplate code by automatically gen
 - `@EqualsAndHashCode`: Generates `equals()` and `hashCode()` methods based on the fields.
 - `@NoArgsConstructor`, `@AllArgsConstructor`, and `@RequiredArgsConstructor`: Generate constructors with various argument configurations.
 - `@Data`: A shorthand for generating `@Getter`, `@Setter`, `@ToString`, `@EqualsAndHashCode`, and `@RequiredArgsConstructor` in one annotation.
+
+
+@Transcational -
+@EnableTransactionManagement
+trasaction context 
+Interface -> PlatformTransactionManager -> Its implementation -> MongoTransactionManager this we have configure it in main class
+MonogoDatabase factory
+
+
+clusters in Mongodb -> sharding , replication
+Sharding is a technique in MongoDB that distributes data across multiple machines to handle large data sets and high-performance operations
+MongoDB replication is a process that creates multiple copies of data across multiple servers or nodes to improve data availability, fault tolerance, and scalability
+
+Spring Security :-
+It is a powerful a powerful and highly customizable Framework that is often used in spring boot application to handle authentication and autherization.
+by addding the dependencies it will make the all the end points as secure. You will be needing the user and password. By default it uses http basic authentication you need to send the user:password in the header.
