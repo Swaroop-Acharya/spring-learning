@@ -253,17 +253,87 @@ Lombok is a Java library that helps reduce boilerplate code by automatically gen
 - `@Data`: A shorthand for generating `@Getter`, `@Setter`, `@ToString`, `@EqualsAndHashCode`, and `@RequiredArgsConstructor` in one annotation.
 
 
-@Transcational -
-@EnableTransactionManagement
-trasaction context 
-Interface -> PlatformTransactionManager -> Its implementation -> MongoTransactionManager this we have configure it in main class
-MonogoDatabase factory
+# Spring Boot with MongoDB and Spring Security
 
+## Table of Contents
+1. [Transactional and Transaction Management](#transactional-and-transaction-management)
+2. [MongoDB Clusters](#mongodb-clusters)
+   - Sharding
+   - Replication
+3. [Spring Security](#spring-security)
+   - Authentication and Authorization
+   - Stateless Authentication
+4. [YAML Configuration](#yaml-configuration)
 
-clusters in Mongodb -> sharding , replication
-Sharding is a technique in MongoDB that distributes data across multiple machines to handle large data sets and high-performance operations
-MongoDB replication is a process that creates multiple copies of data across multiple servers or nodes to improve data availability, fault tolerance, and scalability
+---
 
-Spring Security :-
-It is a powerful a powerful and highly customizable Framework that is often used in spring boot application to handle authentication and autherization.
-by addding the dependencies it will make the all the end points as secure. You will be needing the user and password. By default it uses http basic authentication you need to send the user:password in the header.
+## Transactional and Transaction Management
+
+### @Transactional
+The `@Transactional` annotation is used in Spring to manage transactions declaratively. It ensures that operations performed within a method are treated as a single unit of work. If any step fails, the transaction rolls back.
+
+### @EnableTransactionManagement
+The `@EnableTransactionManagement` annotation enables annotation-driven transaction management within a Spring application.
+
+### Transaction Context
+The transaction mechanism works with the following components:
+1. **Interface**: `PlatformTransactionManager` - This is the core interface for managing transactions in Spring.
+2. **Implementation**: `MongoTransactionManager` - The implementation specific to MongoDB.
+3. **Configuration**: Configure the `MongoTransactionManager` in the main application class for transaction support.
+
+### MongoDatabaseFactory
+This factory is used to create database connections for MongoDB and is integral to configuring transactions.
+
+---
+
+## MongoDB Clusters
+
+MongoDB provides two key techniques for managing data across clusters:
+
+### Sharding
+Sharding is a technique to distribute data across multiple servers. It is useful for:
+- Handling large datasets.
+- Managing high-performance operations.
+
+### Replication
+Replication involves maintaining multiple copies of the same data across different servers. It helps in:
+- Improving **data availability**.
+- Ensuring **fault tolerance**.
+- Providing **scalability** by distributing the load across multiple nodes.
+
+---
+
+## Spring Security
+
+### Overview
+Spring Security is a powerful and customizable framework for handling **authentication** and **authorization** in Spring Boot applications. 
+
+### Features
+- Adding the **Spring Security dependency** makes all endpoints secure by default.
+- By default, Spring Security uses HTTP Basic Authentication, requiring a username and password in the header.
+- Spring Security manages authentication across requests using **sessions** and **cookies** (e.g., `JSESSIONID`).
+
+### Stateless Authentication
+HTTP Basic Authentication is **stateless**, meaning credentials are sent with every request. However, Spring Security can still maintain authentication across multiple requests by leveraging sessions and cookies.
+
+#### Example Configuration
+`WebSecurityConfigurerAdapter` can be used to configure custom security rules in a Spring Boot application.
+
+---
+
+## YAML Configuration
+
+The `application.yml` file in Spring Boot allows you to define configurations in a clean and structured format. YAML (Yet Another Markup Language) is not a markup language; it's a human-readable data serialization standard.
+
+### Example
+```yaml
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydb
+    username: user
+    password: password
+  security:
+    user:
+      name: admin
+      password: password
+
